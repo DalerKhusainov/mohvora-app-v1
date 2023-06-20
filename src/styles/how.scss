@@ -1,0 +1,92 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.how-section {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 12rem;
+
+  @include laptop-small {
+    padding: 5rem 6rem;
+  }
+
+  @include mobile {
+    padding: 3rem 4rem;
+  }
+
+  @include mobile-small {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how-info {
+    width: fit-content;
+
+    @include mobile-small {
+      text-align: center;
+      margin-bottom: $bottom-gutter-md;
+    }
+
+    h2 {
+      font-size: $heading-secondary-font-size;
+      color: $color-primary-dark;
+      margin-bottom: $bottom-gutter-sm;
+
+      @include mobile {
+        font-size: $heading-tertiary-font-size;
+      }
+
+      @include mobile-small {
+        font-size: $heading-secondary-font-size;
+      }
+    }
+
+    p {
+      font-size: $default-font-size;
+      color: $color-primary-light-1;
+      margin-bottom: $bottom-gutter-md;
+
+      @include laptop-small {
+        margin-bottom: $bottom-gutter-lg;
+      }
+
+      @include tablet-small {
+        margin-bottom: $bottom-gutter-md;
+      }
+
+      @include mobile {
+        font-size: $font-size-md;
+        // font-size: $heading-secondary-font-size;
+      }
+    }
+
+    button {
+      background-color: $color-primary-dark;
+      border: none;
+      border-radius: 10rem;
+      outline: none;
+      padding: 1.5rem 6rem;
+      color: $color-white;
+      font-size: $default-font-size;
+      font-family: "Nunito", sans-serif;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      @include tablet-small {
+        padding: 1rem 4rem;
+      }
+
+      &:hover {
+        background-color: $color-hover-btn-dark;
+      }
+    }
+  }
+
+  .how-img {
+    width: fit-content;
+
+    img {
+      width: 100%;
+    }
+  }
+}

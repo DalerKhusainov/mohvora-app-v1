@@ -1,0 +1,153 @@
+@import "../styles/variables.scss";
+@import "./mixins.scss";
+
+.search-form {
+  background-color: $color-primary-light-1;
+  width: 35rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  border-radius: $border-radius-lg;
+
+  @include mobile {
+    width: 25rem;
+    height: 35rem;
+    padding: 1.5rem 1rem;
+  }
+
+  &-text {
+    font-size: $heading-secondary-font-size;
+    color: $color-white;
+    text-align: center;
+    margin-bottom: $bottom-gutter-md;
+
+    @include mobile {
+      font-size: $heading-tertiary-font-size;
+      margin-bottom: $bottom-gutter-sm;
+      padding: 0 1rem 0 1rem;
+    }
+  }
+
+  &-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      width: 25rem;
+      height: 5rem;
+      border: none;
+      border-radius: $border-radius-sm;
+      outline: none;
+      margin-bottom: $bottom-gutter-sm;
+      padding: 1rem 2rem;
+      font-size: $default-font-size;
+      color: $color-primary-dark;
+
+      @include mobile {
+        width: 20rem;
+        height: 4rem;
+        font-size: $font-size-md;
+        padding: 0.5rem 1rem;
+      }
+
+      &::placeholder {
+        font-size: $default-font-size;
+        color: $color-primary-light-2;
+
+        @include mobile {
+          font-size: $font-size-md;
+        }
+      }
+    }
+
+    input[type="date"] {
+      color: $color-primary-light-2;
+      padding: 0 2rem;
+      font-size: $default-font-size;
+      font-family: "Nunito", sans-serif;
+
+      @include mobile {
+        padding: 0rem 1rem;
+      }
+    }
+
+    .search-form-counter {
+      background-color: $color-white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 25rem;
+      height: 5rem;
+      border-radius: $border-radius-sm;
+      padding: 1rem 2rem;
+      margin-bottom: $bottom-gutter-md;
+
+      @include mobile {
+        width: 20rem;
+        height: 4rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: $bottom-gutter-md;
+      }
+
+      &-text {
+        font-size: $default-font-size;
+        color: $color-primary-dark;
+
+        @include mobile {
+          font-size: $font-size-md;
+        }
+      }
+
+      &-action {
+        display: flex;
+        align-items: center;
+        column-gap: 1.5rem;
+        color: $color-primary-light-1;
+
+        @include mobile {
+          column-gap: 0.5rem;
+        }
+      }
+
+      &-icon {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      &-amount {
+        font-size: $default-font-size;
+        color: $color-primary-dark;
+
+        @include mobile {
+          font-size: $font-size-md;
+        }
+      }
+    }
+
+    button {
+      background-color: $color-primary-dark;
+      border: none;
+      border-radius: $border-radius-sm;
+      padding: 1rem 6rem;
+      font-size: $default-font-size;
+      font-family: inherit;
+      font-weight: 500;
+      color: $color-white;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      @include mobile {
+        padding: 1rem 4rem;
+        font-size: $font-size-md;
+      }
+
+      &:hover {
+        background-color: $color-hover-btn-dark;
+      }
+    }
+  }
+}

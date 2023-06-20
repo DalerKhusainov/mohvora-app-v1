@@ -1,0 +1,102 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.how-driver-section {
+  .how-driver-heading {
+    text-align: center;
+    font-size: $heading-secondary-font-size;
+    color: $color-primary-dark;
+    margin-bottom: $gutter-horizontal;
+
+    @include mobile-small {
+      padding: 0 7rem;
+    }
+  }
+
+  .how-driver-cols {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 8rem;
+
+    @include tablet-small {
+      padding: 0;
+    }
+
+    @include mobile-small {
+      flex-direction: column;
+      padding: 0 7rem;
+    }
+
+    .how-driver-col-left {
+      .how-driver-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        margin-bottom: $gutter-horizontal-middle;
+
+        @include tablet-small {
+          grid-template-columns: 1fr 0.7fr;
+        }
+
+        @include mobile-small {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        img {
+          height: 10rem;
+          justify-self: center;
+
+          @include mobile-small {
+            height: 12rem;
+          }
+        }
+
+        p {
+          font-size: $default-font-size;
+          color: $color-primary-light-1;
+
+          @include mobile-small {
+            margin-left: 2.5rem;
+          }
+        }
+      }
+    }
+
+    .how-driver-col-right {
+      .how-driver-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        margin-bottom: $gutter-horizontal-middle;
+
+        img {
+          height: 10rem;
+          justify-self: center;
+        }
+
+        p {
+          font-size: $default-font-size;
+          color: $color-primary-light-1;
+          margin-left: 2.5rem;
+
+          @include tablet-small {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-line {
+    background-color: $color-primary-light-1;
+    height: 5vh;
+    width: 100%;
+    margin-top: 20rem;
+
+    @include mobile-small {
+      margin-top: 10rem;
+    }
+  }
+}

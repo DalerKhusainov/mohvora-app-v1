@@ -1,0 +1,20 @@
+@import "./styles/variables.scss";
+@import "./styles/mixins.scss";
+
+.App {
+  background-color: $color-white;
+  max-width: $app-width;
+  margin: 0 auto;
+
+  // @include large-screen {
+  //   margin: 0 20rem;
+  // }
+
+  // @include middle-screen {
+  //   margin: 0 10rem;
+  // }
+
+  // @include laptop {
+  //   margin: 0 5rem;
+  // }
+}

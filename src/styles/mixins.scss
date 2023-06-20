@@ -1,0 +1,41 @@
+// Below 500px
+@mixin mobile-small {
+  @media screen and (max-width: 31.25em) {
+    @content;
+  }
+}
+
+// Below 600px
+@mixin mobile {
+  @media screen and (max-width: 37.5em) {
+    @content;
+  }
+}
+
+// Below 700px
+@mixin tablet-small {
+  @media screen and (max-width: 44em) {
+    @content;
+  }
+}
+
+// Below 800px
+@mixin tablet {
+  @media screen and (max-width: 50em) {
+    @content;
+  }
+}
+
+// Below 900px
+@mixin laptop-small {
+  @media screen and (max-width: 56.25em) {
+    @content;
+  }
+}
+
+// Below 1000px
+@mixin laptop {
+  @media screen and (max-width: 62.5em) {
+    @content;
+  }
+}

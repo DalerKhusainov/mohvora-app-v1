@@ -1,0 +1,48 @@
+@import "../styles/variables.scss";
+@import "./mixins.scss";
+
+.features-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: $gutter-vertical-small;
+  padding: 0 10rem;
+
+  @include tablet-small {
+    padding: 0 5rem;
+  }
+
+  @include mobile-small {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 0 10rem;
+    margin-bottom: $gutter-horizontal-small;
+  }
+
+  .feature {
+    margin-bottom: $gutter-horizontal;
+
+    @include mobile-small {
+      margin-bottom: $gutter-horizontal-small;
+    }
+
+    &-icon {
+      font-size: 4rem;
+      color: $color-primary-dark;
+      width: fit-content;
+    }
+
+    &-title {
+      font-size: $default-font-size;
+      font-weight: 700;
+      color: $color-primary-dark;
+      margin-bottom: $bottom-gutter-sm;
+      margin-left: 3px;
+    }
+
+    &-description {
+      margin-left: 3px;
+      font-size: $font-size-sm;
+      color: $color-primary-light-1;
+    }
+  }
+}

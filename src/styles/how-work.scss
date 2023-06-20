@@ -1,0 +1,78 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.how-work-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   height: 95vh;
+
+  @include mobile-small {
+    height: auto;
+  }
+
+  .how-work-heading {
+    text-align: center;
+    font-size: $heading-secondary-font-size;
+    color: $color-primary-dark;
+    margin-bottom: $gutter-horizontal;
+  }
+
+  .how-work-options-cols {
+    display: flex;
+    padding: 0 5rem;
+
+    @include mobile-small {
+      flex-direction: column;
+    }
+
+    .passenger-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      justify-items: center;
+      row-gap: $gutter-horizontal-small;
+    }
+
+    img {
+      width: 70%;
+      height: auto;
+    }
+
+    button {
+      background-color: $color-primary-dark;
+      color: $color-white;
+      font-family: inherit;
+      box-shadow: $box-shadow-btn;
+      border: none;
+      border-radius: $border-radius-sm;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: $color-hover-btn-dark;
+      }
+    }
+
+    .how-work-btn {
+      width: 10rem;
+      height: 4rem;
+    }
+
+    .driver-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      justify-items: center;
+      row-gap: $gutter-horizontal-small;
+    }
+  }
+
+  .bottom-line {
+    background-color: $color-primary-light-1;
+    height: 5vh;
+    width: 100%;
+    margin-top: auto;
+  }
+}

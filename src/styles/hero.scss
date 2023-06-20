@@ -1,0 +1,60 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .hero-heading {
+    color: $color-primary-dark;
+    font-size: $heading-primary-font-size;
+    text-align: center;
+    width: 70rem;
+    height: auto;
+    margin-bottom: $bottom-gutter-lg;
+
+    @include mobile {
+      padding: 0 5rem;
+    }
+
+    @include mobile-small {
+      font-size: $heading-secondary-font-size;
+      padding: 0 13rem;
+    }
+  }
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    column-gap: $gutter-vertical;
+    margin-bottom: $gutter-horizontal;
+
+    @include laptop {
+      column-gap: $gutter-vertical-small;
+    }
+
+    @include laptop-small {
+      column-gap: 0px;
+    }
+
+    @include mobile-small {
+      flex-direction: column;
+      align-items: center;
+      row-gap: $gutter-horizontal-small;
+    }
+
+    .hero-img {
+      display: flex;
+
+      .hero-svg {
+        height: 33rem;
+        align-self: flex-end;
+
+        @include mobile {
+          height: 28rem;
+        }
+      }
+    }
+  }
+}

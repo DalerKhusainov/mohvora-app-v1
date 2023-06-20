@@ -1,0 +1,127 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.how-driver-section {
+  text-align: center;
+  .how-driver-heading {
+    // text-align: center;
+    font-size: $heading-secondary-font-size;
+    color: $color-primary-dark;
+    margin-bottom: $gutter-horizontal;
+
+    @include mobile-small {
+      padding: 0 7rem;
+    }
+  }
+
+  .how-driver-cols {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 8rem;
+
+    @include tablet-small {
+      padding: 0;
+    }
+
+    @include mobile-small {
+      flex-direction: column;
+      padding: 0 7rem;
+    }
+
+    .how-driver-col-left {
+      .how-driver-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        margin-bottom: $gutter-horizontal-middle;
+
+        @include tablet-small {
+          grid-template-columns: 1fr 0.7fr;
+        }
+
+        @include mobile-small {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        img {
+          height: 10rem;
+          justify-self: center;
+
+          @include mobile-small {
+            height: 12rem;
+          }
+        }
+
+        p {
+          font-size: $default-font-size;
+          color: $color-primary-light-1;
+          text-align: start;
+
+          @include mobile-small {
+            margin-left: 2.5rem;
+          }
+        }
+      }
+    }
+
+    .how-driver-col-right {
+      .how-driver-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        margin-bottom: $gutter-horizontal-middle;
+
+        img {
+          height: 10rem;
+          justify-self: center;
+        }
+
+        p {
+          font-size: $default-font-size;
+          color: $color-primary-light-1;
+          margin-left: 2.5rem;
+          text-align: start;
+
+          @include tablet-small {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .how-btn {
+    background-color: $color-primary-dark;
+    border: none;
+    border-radius: 10rem;
+    outline: none;
+    padding: 1.5rem 6rem;
+    color: $color-white;
+    font-size: $default-font-size;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    @include tablet-small {
+      padding: 1rem 4rem;
+    }
+
+    &:hover {
+      background-color: $color-hover-btn-dark;
+    }
+  }
+
+  .bottom-line {
+    background-color: $color-primary-light-1;
+    height: 5vh;
+    width: 100%;
+    margin-top: 20rem;
+
+    @include mobile-small {
+      margin-top: 10rem;
+    }
+  }
+}

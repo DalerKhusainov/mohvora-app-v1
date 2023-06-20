@@ -1,0 +1,35 @@
+@import "./styles/mixins.scss";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #b2c8ca;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Nunito", sans-serif;
+  font-size: 62.5%;
+  box-sizing: inherit;
+
+  @include laptop {
+    /* 9px / 16 */
+    font-size: 56.25%;
+  }
+
+  @include tablet {
+    /* 8px / 16 */
+    font-size: 50%;
+  }
+
+  @include mobile-small {
+    /* 9px / 16 */
+    font-size: 56.25%;
+  }
+}

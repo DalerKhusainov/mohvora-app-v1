@@ -1,0 +1,190 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.selected-driver-section {
+  width: 70%;
+  margin: 0 auto;
+
+  .publish-date {
+    color: $color-primary-dark;
+    font-size: $heading-secondary-font-size;
+    text-align: center;
+    margin-bottom: $bottom-gutter-md;
+  }
+
+  .publish-direction-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: $gutter-vertical-small;
+
+    .publish-direction-city {
+      color: $color-primary-light-1;
+      font-size: $heading-secondary-font-size;
+    }
+
+    .location-dots-col {
+      height: 2rem;
+      width: auto;
+      display: flex;
+      align-items: center;
+      padding: 0 0.7rem;
+
+      .location-cycle {
+        background-color: $color-white;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 50%;
+        border: solid 0.3rem $color-primary-light-1;
+
+        &--1 {
+          transform: translateX(0.2rem);
+        }
+
+        &--2 {
+          transform: translateX(-0.2rem);
+        }
+      }
+
+      .location-line {
+        background-color: $color-primary-light-1;
+        height: 0.7rem;
+        width: 15rem;
+
+        @include mobile-small {
+          width: 3rem;
+        }
+      }
+    }
+  }
+
+  .publish-time {
+    color: $color-primary-light-1;
+    font-size: $heading-secondary-font-size;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: $bottom-gutter-md;
+  }
+
+  .passenger-total-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 10rem;
+    color: $color-primary-light-1;
+    font-size: $heading-secondary-font-size;
+    border-top: solid 2px $color-primary-light-1;
+    border-bottom: solid 2px $color-primary-light-1;
+
+    @include mobile-small {
+      padding: 0;
+    }
+  }
+
+  .publisher-info-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 3rem;
+
+    .publisher-name-rate-col {
+      .publisher-name-text {
+        color: $color-primary-light-1;
+        font-size: $heading-secondary-font-size;
+        font-weight: 700;
+      }
+      .publisher-age-text {
+        color: $color-primary-light-1;
+        font-size: $default-font-size;
+      }
+    }
+
+    img {
+      height: 7rem;
+      width: 7rem;
+      border-radius: 50%;
+    }
+  }
+
+  .publish-cta-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 0 $gutter-horizontal-small;
+    border-bottom: solid 2px $color-primary-light-1;
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 4rem;
+    }
+
+    .publish-chat-col {
+      background-color: $color-primary-dark;
+      display: flex;
+      align-items: center;
+      column-gap: 1.5rem;
+      color: $color-white;
+      font-size: 3.5rem;
+      padding: 1rem 1.5rem;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: $color-hover-btn-dark;
+      }
+
+      p {
+        font-size: $default-font-size;
+      }
+    }
+
+    .publish-call-col {
+      background-color: $color-primary-dark;
+      display: flex;
+      align-items: center;
+      column-gap: 1.5rem;
+      color: $color-white;
+      font-size: 3.5rem;
+      padding: 1rem 1.5rem;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: $color-hover-btn-dark;
+      }
+
+      p {
+        font-size: $default-font-size;
+      }
+    }
+  }
+
+  .travel-options-col {
+    padding: 3rem 3rem 7rem 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: $gutter-horizontal-small;
+
+    .option-col {
+      display: flex;
+      align-items: center;
+      column-gap: 3rem;
+      color: $color-primary-dark;
+      font-size: 4rem;
+
+      p {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+}
+
+.bottom-line {
+  background-color: $color-primary-light-1;
+  height: 10vh;
+  width: 100%;
+  margin-top: auto;
+}

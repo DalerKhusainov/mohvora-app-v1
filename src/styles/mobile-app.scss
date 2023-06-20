@@ -1,0 +1,115 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.mobile-app {
+  display: flex;
+  column-gap: $gutter-vertical;
+  padding: 0 18rem;
+
+  @include tablet-small {
+    padding: 0 10rem;
+  }
+
+  @include mobile {
+    padding: 0 5rem;
+  }
+
+  @include mobile-small {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: $gutter-horizontal;
+  }
+
+  &-img {
+    margin-bottom: $gutter-horizontal;
+
+    @include mobile-small {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: $gutter-horizontal-small;
+    }
+
+    img {
+      width: 100%;
+
+      @include mobile-small {
+        width: 50%;
+      }
+    }
+  }
+
+  &-info {
+    @include mobile-small {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: $heading-secondary-font-size;
+      color: $color-primary-dark;
+      margin-bottom: $bottom-gutter-sm;
+    }
+
+    p {
+      font-size: $default-font-size;
+      color: $color-primary-light-1;
+      margin-bottom: $bottom-gutter-md;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    column-gap: $gutter-vertical-small;
+  }
+
+  &-button-appstore {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: $border-radius-sm;
+    width: 12rem;
+    border: 1px solid $color-black;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: $color-grey-light-1;
+    }
+
+    img {
+      width: 3rem;
+    }
+
+    span {
+      font-size: $font-size-md;
+    }
+  }
+
+  &-button-playmarket {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: $border-radius-sm;
+    width: 13rem;
+    border: 1px solid $color-black;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: $color-grey-light-1;
+    }
+
+    img {
+      width: 3rem;
+    }
+
+    span {
+      font-size: $font-size-md;
+    }
+  }
+}
