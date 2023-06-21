@@ -17,6 +17,18 @@
     padding: 2rem;
     border-radius: $border-radius-md;
 
+    @include tablet {
+      width: 50%;
+    }
+
+    @include mobile {
+      width: 60%;
+    }
+
+    @include mobile-small {
+      width: 70%;
+    }
+
     .publish-page-text {
       color: $color-white;
       font-size: $heading-tertiary-font-size;
@@ -33,6 +45,10 @@
       padding: 1rem;
       color: $color-primary-dark;
       margin-top: 0.3rem;
+
+      @include tablet {
+        height: 4rem;
+      }
     }
 
     input {

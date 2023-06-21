@@ -1,0 +1,246 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.publish-card {
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: $box-shadow-card-light;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: $box-shadow-card-dark;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: 50% 30% 20%;
+    align-items: center;
+
+    .card-directions-col {
+      display: flex;
+      align-items: center;
+
+      .card-direction-text {
+        font-size: $font-size-md;
+        color: $color-primary-light-1;
+      }
+
+      .location-dots-col {
+        height: 2rem;
+        width: auto;
+        display: flex;
+        align-items: center;
+        padding: 0 0.7rem;
+
+        .location-cycle {
+          background-color: $color-white;
+          height: 0.8rem;
+          width: 0.8rem;
+          border-radius: 50%;
+          border: solid 0.2rem $color-primary-light-1;
+
+          &--1 {
+            transform: translateX(0.2rem);
+          }
+
+          &--2 {
+            transform: translateX(-0.2rem);
+          }
+        }
+
+        .location-line {
+          background-color: $color-primary-light-1;
+          height: 0.3rem;
+          width: 3rem;
+        }
+      }
+    }
+    .card-date {
+      color: $color-primary-light-1;
+      font-size: $default-font-size;
+    }
+
+    .card-icons-col {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+      color: $color-primary-light-1;
+      font-size: $default-font-size;
+      justify-self: right;
+
+      div {
+        display: flex;
+        align-items: center;
+      }
+
+      .card-no-pets-icon {
+        position: relative;
+
+        .line {
+          display: block;
+          width: 0.13rem;
+          height: 1.75rem;
+          transform: rotate(-45deg);
+
+          &-dark {
+            background-color: $color-primary-light-1;
+            position: absolute;
+            top: 0.07rem;
+            left: 0.7rem;
+          }
+
+          &-light {
+            background-color: $color-white;
+            position: absolute;
+            top: 0.07rem;
+            left: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .card-user-name-col {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+      }
+
+      .user-name-phone-number-col {
+        margin-left: 1rem;
+
+        .user-name {
+          color: $color-primary-dark;
+          font-size: $default-font-size;
+          font-weight: 700;
+        }
+
+        .user-phone-number-col {
+          display: flex;
+          align-items: center;
+          column-gap: 0.3rem;
+          color: $color-primary-light-1;
+          font-size: $font-size-md;
+        }
+
+        .user-phone-number-text {
+          color: $color-primary-dark;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .card-passenger-amount-user-car-col {
+      color: $color-primary-light-1;
+      font-size: $default-font-size;
+
+      .card-passenger-amaunt-col {
+        display: flex;
+        align-items: center;
+        column-gap: 0.3rem;
+
+        .passenger-amaunt-text {
+          color: $color-primary-dark;
+          font-weight: 700;
+        }
+      }
+
+      .card-user-car-col {
+        display: flex;
+        align-items: center;
+        column-gap: 0.3rem;
+
+        .card-user-car-text {
+          color: $color-primary-dark;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .card-price-col {
+      display: flex;
+      flex-direction: column;
+      justify-self: right;
+
+      .card-price-text {
+        color: $color-primary-light-1;
+        font-size: $font-size-md;
+        font-weight: 700;
+      }
+
+      .card-price {
+        color: $color-primary-dark;
+        font-size: $font-size-lg;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .card-container-1 {
+    margin-bottom: 2rem;
+  }
+
+  .card-container-2 {
+    margin-bottom: 2rem;
+  }
+
+  .publish-cta-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // padding: 0 0 $gutter-horizontal-small;
+
+    // @include mobile {
+    //   flex-direction: column;
+    //   row-gap: 4rem;
+    // }
+
+    .publish-chat-col {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      color: $color-primary-light-1;
+      font-size: 2.5rem;
+      padding: 0.7rem 1rem;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: $color-primary-light-2;
+        color: $color-primary-dark;
+      }
+
+      p {
+        font-size: $font-size-lg;
+      }
+    }
+
+    .publish-call-col {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      color: $color-primary-light-1;
+      font-size: 2.5rem;
+      padding: 0.7rem 1rem;
+      border-radius: $border-radius-sm;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: $color-primary-light-2;
+        color: $color-primary-dark;
+      }
+
+      p {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+}

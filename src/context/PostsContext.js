@@ -11,10 +11,6 @@ export const PostsContextProvider = ({ children }) => {
   // SPECIFYING REFERENCE TO COLLECTION
   const postsCollectionRef = collection(db, "posts");
 
-  const testFunc = (text) => {
-    console.log(`Hello ${text}`);
-  };
-
   const getPostsList = async () => {
     try {
       // READ THE DATA
@@ -29,6 +25,7 @@ export const PostsContextProvider = ({ children }) => {
       console.error(err);
     }
   };
+
   useEffect(() => {
     getPostsList();
   }, []);
