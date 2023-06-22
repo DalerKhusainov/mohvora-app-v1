@@ -16,6 +16,9 @@ import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import SmokingRoomsIcon from "@mui/icons-material/SmokingRooms";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 
+// FUNCTION
+import { convertMonths } from "../functions/functions";
+
 export const PublishCard = ({ post }) => {
   const {
     dirFrom,
@@ -44,7 +47,7 @@ export const PublishCard = ({ post }) => {
           </div>
           <p className="card-direction-text">{dirTo}</p>
         </div>
-        <p className="card-date">{date}</p>
+        <p className="card-date">{convertMonths(date)}</p>
         <div className="card-icons-col">
           {!isSmoking && (
             <div className="card-no-smoke-icon">
@@ -104,7 +107,7 @@ export const PublishCard = ({ post }) => {
         </div>
         <div className="card-price-col">
           <p className="card-price-text">Цена:</p>
-          <p className="card-price">{tripPrice}</p>
+          <p className="card-price">{`${tripPrice}с`}</p>
         </div>
       </div>
       <div className="publish-cta-col">

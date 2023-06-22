@@ -17,7 +17,7 @@ export const Hero = () => {
         Поездки на ваш выбор по самым низким ценам
       </h1>
       <div className="hero">
-        <SearchForm />
+        <SearchForm isHomePage={true} />
         <div className="hero-img">
           <img
             className="hero-svg"

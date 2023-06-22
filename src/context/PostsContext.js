@@ -7,6 +7,11 @@ export const PostsContext = createContext();
 
 export const PostsContextProvider = ({ children }) => {
   const [posts, setPosts] = useState({});
+  const [filteredPosts, setFilteredPosts] = useState({});
+  const [isTrue, setIsTrue] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("");
+  const [cityFrom, setCityFrom] = useState("");
+  const [cityTo, setCityTo] = useState("");
 
   // SPECIFYING REFERENCE TO COLLECTION
   const postsCollectionRef = collection(db, "posts");
@@ -21,6 +26,7 @@ export const PostsContextProvider = ({ children }) => {
       }));
       // SET THE POSTS LIST
       setPosts(filteredData);
+      console.log(filteredData);
     } catch (err) {
       console.error(err);
     }
@@ -29,8 +35,34 @@ export const PostsContextProvider = ({ children }) => {
   useEffect(() => {
     getPostsList();
   }, []);
+
+  const filterPostsFunc = (dirFrom, dirTo, date, amountOfPassengers) => {
+    const newFilteredPosts = posts.filter(
+      (post) =>
+        post.dirFrom === dirFrom &&
+        post.dirTo === dirTo &&
+        post.date === date &&
+        post.amountOfPassengers === amountOfPassengers
+    );
+    setFilteredPosts(newFilteredPosts);
+    setIsTrue(true);
+    setSelectedDate(date);
+    setCityFrom(dirFrom);
+    setCityTo(dirTo);
+  };
+
   return (
-    <PostsContext.Provider value={{ posts, getPostsList }}>
+    <PostsContext.Provider
+      value={{
+        getPostsList,
+        filterPostsFunc,
+        filteredPosts,
+        isTrue,
+        selectedDate,
+        cityFrom,
+        cityTo,
+      }}
+    >
       {children}
     </PostsContext.Provider>
   );

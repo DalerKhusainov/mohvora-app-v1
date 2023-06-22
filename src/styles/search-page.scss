@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 
   .search-page-heading {
     color: $color-primary-dark;
@@ -15,6 +16,7 @@
   .search-page-result-col {
     width: 60%;
     padding: 0 2rem;
+    min-height: 45rem;
 
     @include laptop-small {
       width: 65%;
@@ -56,8 +58,23 @@
     }
 
     .publish-card-list-col {
-      min-height: 60rem;
+      // min-height: 60rem;
       width: 100%;
+    }
+  }
+
+  .search-page-not-found-result-col {
+    text-align: center;
+    font-size: $heading-secondary-font-size;
+    color: $color-primary-light-1;
+    margin-top: $gutter-horizontal-small;
+
+    .text-2 {
+      margin-bottom: $bottom-gutter-sm;
+    }
+
+    .not-found-result-icon {
+      font-size: $heading-primary-font-size;
     }
   }
 }

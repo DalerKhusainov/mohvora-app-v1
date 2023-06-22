@@ -67,6 +67,7 @@ export const PublishPage = () => {
         <div>
           <label>Откуда</label>
           <select className="selector-city-from">
+            <option value={""}>Выберите город</option>
             <option value={"Душанбе"}>Душанбе</option>
             <option value={"Худжанд"}>Худжанд</option>
             <option value={"Истаравшан"}>Истаравшан</option>
@@ -76,6 +77,7 @@ export const PublishPage = () => {
         <div>
           <label>Куда</label>
           <select className="selector-city-to">
+            <option value={""}>Выберите город</option>
             <option value={"Душанбе"}>Душанбе</option>
             <option value={"Худжанд"}>Худжанд</option>
             <option value={"Истаравшан"}>Истаравшан</option>
