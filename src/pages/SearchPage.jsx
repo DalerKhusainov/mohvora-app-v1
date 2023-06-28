@@ -1,9 +1,10 @@
 // REACT
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 // REACT COMPONENTS
 import { SearchForm } from "../components/SearchForm";
 import { PublishCard } from "../components/PublishCard";
+import { FilterSelectorMUIComp } from "../components/FilterSelectorMUIComp";
 
 // CSS STYLES
 import "../styles/search-page.scss";
@@ -15,36 +16,44 @@ import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDiss
 // FORM REACT CONTEXT API
 import { PostsContext } from "../context/PostsContext";
 
-// FUNCTION
-import { convertMonths } from "../functions/functions";
-
 export const SearchPage = () => {
-  const { filteredPosts, isTrue, selectedDate, cityFrom, cityTo } =
+  const { filteredPosts, isTrue, directionFrom, directionTo, sortedPostsFunc } =
     useContext(PostsContext);
+  const [filterValue, setFilterValue] = useState("");
+
+  useEffect(() => {
+    sortedPostsFunc(filterValue);
+  }, [filterValue]);
 
   return (
     <section className="search-page-section">
-      <h2 className="search-page-heading">
-        Путешествовать с нами легко и удобно
-      </h2>
-      <SearchForm isHomePage={false} />
+      <SearchForm />
+
       {isTrue && (
         <div className="search-page-result-col">
-          <div className="selected-date-col">
-            <span className="date">{convertMonths(selectedDate)}</span>
-            <div className="directions">
-              <span className="direction-text">{cityFrom}</span>
-              <ArrowForwardIcon color="inherit" fontSize="inherit" />
-              <span className="direction-text">{cityTo}</span>
+          <div className="selected-direction-filter-col">
+            <div className="selected-direction-col">
+              <span className="selected-direction-text">Направление:</span>
+              <div className="directions">
+                <span className="direction-city">{directionFrom}</span>
+                <ArrowForwardIcon color="inherit" fontSize="inherit" />
+                <span className="direction-city">{directionTo}</span>
+              </div>
+            </div>
+            <div className="filter-col">
+              <FilterSelectorMUIComp
+                filterValue={filterValue}
+                setFilterValue={setFilterValue}
+              />
             </div>
           </div>
           {filteredPosts.length === 0 && (
             <div className="search-page-not-found-result-col">
               <p className="not-found-result-text text-1">
-                К сожалению выбранной вами дате ничего не найдено.
+                К сожалению на выбранной вами даты ничего не найдено.
               </p>
               <p className="not-found-result-text text-2">
-                Пожалуйста выберите другую дату!
+                Пожалуйста выберите другие даты!
               </p>
               <div className="not-found-result-icon">
                 <SentimentVeryDissatisfiedIcon
@@ -56,7 +65,12 @@ export const SearchPage = () => {
           )}
           <div className="publish-card-list-col">
             {filteredPosts.map((post) => (
-              <PublishCard post={post} key={post.id} />
+              <PublishCard
+                post={post}
+                key={post.id}
+                isSearchPage={true}
+                isUserProfilePage={false}
+              />
             ))}
           </div>
         </div>

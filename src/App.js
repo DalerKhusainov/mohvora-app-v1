@@ -10,6 +10,8 @@ import { SearchPage } from "./pages/SearchPage";
 import { SelectedDriver } from "./pages/SelectedDriver";
 import { PublishPage } from "./pages/PublishPage";
 import { SuccessPublishPage } from "./pages/SuccessPublishPage";
+import { UserProfile } from "./pages/UserProfile";
+// import { UserProfilePosts } from "./pages/UserProfilePosts";
 
 // REACT RAUTER
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -37,6 +39,7 @@ function App() {
               path="publish-page/success-publish-page"
               element={<SuccessPublishPage />}
             />
+            <Route path="user-profile/*" element={<UserProfile />} />
           </Route>
         </Routes>
       </BrowserRouter>

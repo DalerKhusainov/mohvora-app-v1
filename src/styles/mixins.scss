@@ -1,3 +1,10 @@
+// Below 400px
+@mixin mobile-extra-small {
+  @media screen and (max-width: 25em) {
+    @content;
+  }
+}
+
 // Below 500px
 @mixin mobile-small {
   @media screen and (max-width: 31.25em) {

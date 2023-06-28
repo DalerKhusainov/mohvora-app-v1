@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 // REACT ROUTER
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 // MATERIAL UI
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
@@ -73,10 +73,10 @@ export const Register = () => {
       <div className="form-wrapper">
         <span className="title">Регистрация</span>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Имя" />
-          <input type="email" placeholder="Почта" />
-          <input type="password" placeholder="Пароль" />
-          <input style={{ display: "none" }} type="file" id="file" />
+          <input required type="text" placeholder="Имя" />
+          <input required type="email" placeholder="Почта" />
+          <input required type="password" placeholder="Пароль" />
+          <input required style={{ display: "none" }} type="file" id="file" />
           <label htmlFor="file">
             <AddPhotoAlternateIcon fontSize="inherit" />
             <span>Добавить фото</span>
@@ -85,7 +85,9 @@ export const Register = () => {
           {loading && "Uploading and compressing the image please wait..."}
           {err && <span className="registerErrText">Something went wrong</span>}
         </form>
-        <p>У вас есть учетная запись?</p>
+        <p>
+          Уже зарегистрированы? <Link to={"/login"}> Вход</Link>
+        </p>
       </div>
       <div className="bottom-line">&nbsp;</div>
     </section>

@@ -3,147 +3,88 @@
 
 .search-form {
   background-color: $color-primary-light-1;
-  width: 35rem;
-  height: 40rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 2rem 2rem;
-  border-radius: $border-radius-lg;
+  align-items: center;
+  width: 34rem;
+  padding: 1rem 0 2rem 0;
+  border-radius: $border-radius-md;
 
-  @include mobile {
-    justify-content: space-evenly;
-    width: 30rem;
-    padding: 1.5rem 1rem;
-  }
-
-  &-text {
+  .search-form-text {
+    text-align: center;
     font-size: $heading-secondary-font-size;
     color: $color-white;
-    text-align: center;
-    margin-bottom: $bottom-gutter-sm;
-
-    @include mobile {
-      font-size: $heading-tertiary-font-size;
-      margin-bottom: 1rem;
-      padding: 0 1rem 0 1rem;
-    }
+    margin-bottom: 1rem;
+    width: 25rem;
   }
 
-  &-inputs {
+  .search-form-inputs {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 0.7rem;
+    row-gap: 1rem;
 
-    .inputs-label-col {
+    .search-form-selectors-cities {
       display: flex;
       flex-direction: column;
-      width: 80%;
+      row-gap: 1rem;
 
-      label {
-        color: $color-primary-light-2;
-        font-size: $font-size-sm;
-        font-weight: 700;
-      }
-    }
-
-    select,
-    input {
-      width: 100%;
-      height: 4rem;
-      border: none;
-      border-radius: $border-radius-sm;
-      outline: none;
-      padding: 1rem;
-      color: $color-primary-dark;
-      margin-top: 0.3rem;
-      cursor: pointer;
-    }
-
-    input[type="date"] {
-      color: $color-primary-dark;
-      padding: 0 1.1rem;
-      font-size: $default-font-size;
-      font-family: "Nunito", sans-serif;
-
-      @include mobile {
-        padding: 0rem 1rem;
-      }
-    }
-
-    .search-form-counter {
-      background-color: $color-white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 80%;
-      height: 4rem;
-      border-radius: $border-radius-sm;
-      padding: 1rem 2rem;
-      margin: 1.5rem 0 2rem 0;
-
-      @include tablet {
-        padding: 1rem 1.1rem;
-      }
-
-      @include mobile {
-        padding: 0.5rem 1rem;
-        margin-bottom: $bottom-gutter-sm;
-      }
-
-      &-text {
-        font-size: $default-font-size;
-        color: $color-primary-dark;
-      }
-
-      &-action {
+      .inputs-label-col {
         display: flex;
-        align-items: center;
-        column-gap: 1.5rem;
-        color: $color-primary-light-1;
+        flex-direction: column;
 
-        @include mobile {
-          column-gap: 0.5rem;
+        select {
+          width: 23rem;
+          height: 4rem;
+          border: none;
+          border-radius: $border-radius-sm;
+          outline: none;
+          padding: 1rem;
+          color: $color-primary-light-1;
+          font-weight: 700;
+          margin-top: 0.3rem;
+          cursor: pointer;
         }
-      }
 
-      &-icon {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-      }
-
-      &-amount {
-        font-size: $default-font-size;
-        color: $color-primary-dark;
-
-        @include mobile {
+        label {
+          color: $color-primary-light-2;
           font-size: $font-size-md;
         }
       }
     }
 
-    button {
-      background-color: $color-primary-dark;
-      border: none;
-      border-radius: $border-radius-sm;
-      padding: 1rem 6rem;
-      font-size: $default-font-size;
-      font-family: inherit;
-      font-weight: 500;
-      color: $color-white;
-      cursor: pointer;
-      transition: all 0.1s ease-in-out;
+    .selector-date-col {
+      display: flex;
+      flex-direction: column;
 
-      @include mobile {
-        padding: 1rem 4rem;
+      label {
+        color: $color-primary-light-2;
         font-size: $font-size-md;
       }
+    }
+  }
 
-      &:hover {
-        background-color: $color-hover-btn-dark;
-      }
+  .search-form-btn {
+    background-color: $color-primary-dark;
+    width: 17rem;
+    border: none;
+    border-radius: $border-radius-sm;
+    padding: 1rem 6rem;
+    margin-top: 2rem;
+    font-size: $default-font-size;
+    font-family: inherit;
+    font-weight: 500;
+    color: $color-white;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    @include mobile {
+      padding: 1rem 4rem;
+      font-size: $font-size-md;
+    }
+
+    &:hover {
+      background-color: $color-hover-btn-dark;
     }
   }
 }

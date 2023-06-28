@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100rem;
 
   .search-page-heading {
     color: $color-primary-dark;
@@ -34,14 +34,15 @@
       width: 100%;
     }
 
-    .selected-date-col {
-      width: fit-content;
+    .selected-direction-filter-col {
+      width: 100%;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
       row-gap: 0.5rem;
       margin: $gutter-horizontal-small 0 $gutter-horizontal-small 0;
 
-      .date {
+      .selected-direction-text {
         font-size: $font-size-lg;
         font-weight: 700;
         color: $color-primary-dark;
@@ -55,10 +56,13 @@
         font-weight: 500;
         color: $color-primary-light-1;
       }
+
+      // .filter-col {
+      //   width: 15rem;
+      // }
     }
 
     .publish-card-list-col {
-      // min-height: 60rem;
       width: 100%;
     }
   }

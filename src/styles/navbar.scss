@@ -34,16 +34,20 @@
       align-items: center;
       list-style: none;
       cursor: pointer;
+      transition: all 0.1s ease-in-out;
+      color: $color-primary-dark;
+
+      &:hover {
+        color: $color-primary-light-1;
+      }
 
       .main-nav-icon {
         display: flex;
         align-items: center;
         font-size: 2.8rem;
-        color: $color-primary-dark;
       }
 
       .main-nav-link-text {
-        color: $color-primary-dark;
         font-size: 1.8rem;
         margin-left: 0.8rem;
 
@@ -60,6 +64,11 @@
         align-items: center;
         justify-content: center;
         font-size: 4rem;
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+          color: $color-primary-light-1;
+        }
 
         img {
           object-fit: cover;
@@ -74,10 +83,14 @@
         display: flex;
         align-items: center;
         font-size: 2.5rem;
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+          color: $color-primary-light-1;
+        }
       }
     }
   }
-
   .main-nav-sub-menu {
     position: absolute;
     right: 0;
@@ -85,6 +98,7 @@
     padding: 2rem 3rem;
     font-size: 1.8rem;
     color: $color-primary-light-2;
+    box-shadow: $box-shadow-sub-menu;
 
     .sub-menu-links {
       display: flex;

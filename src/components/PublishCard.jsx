@@ -1,5 +1,5 @@
 // REACT
-import React from "react";
+import React, { useContext } from "react";
 
 // CSS STYLES
 import "../styles/publish-card.scss";
@@ -9,17 +9,30 @@ import SmokeFreeIcon from "@mui/icons-material/SmokeFree";
 import PetsIcon from "@mui/icons-material/Pets";
 import MusicOffIcon from "@mui/icons-material/MusicOff";
 import PersonIcon from "@mui/icons-material/Person";
-import TelegramIcon from "@mui/icons-material/Telegram";
+import ChatIcon from "@mui/icons-material/Chat";
 import CallIcon from "@mui/icons-material/Call";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import SmokingRoomsIcon from "@mui/icons-material/SmokingRooms";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import EditNoteIcon from "@mui/icons-material/EditNote";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 // FUNCTION
 import { convertMonths } from "../functions/functions";
 
-export const PublishCard = ({ post }) => {
+// REACT CONTEXT API
+import { PostsContext } from "../context/PostsContext";
+
+export const PublishCard = ({
+  post,
+  isSearchPage,
+  isUserProfilePage,
+  // setOpenModalEdit,
+  // setPostId,
+  onSelectedPostHandler,
+}) => {
+  const { onDeletePosts } = useContext(PostsContext);
   const {
     dirFrom,
     dirTo,
@@ -33,6 +46,7 @@ export const PublishCard = ({ post }) => {
     tripPrice,
     userPhoneNum,
     userCar,
+    id,
   } = post;
 
   return (
@@ -54,6 +68,11 @@ export const PublishCard = ({ post }) => {
               <SmokeFreeIcon color="inherit" fontSize="inherit" />
             </div>
           )}
+          {isSmoking && (
+            <div className="card-smoke-icon">
+              <SmokingRoomsIcon color="inherit" fontSize="inherit" />
+            </div>
+          )}
           {!isPets && (
             <div className="card-no-pets-icon">
               <PetsIcon color="inherit" fontSize="inherit" />
@@ -61,19 +80,14 @@ export const PublishCard = ({ post }) => {
               <div className="line line-light">&nbsp;</div>
             </div>
           )}
-          {!isMusic && (
-            <div className="card-no-music-icon">
-              <MusicOffIcon color="inherit" fontSize="inherit" />
-            </div>
-          )}
-          {isSmoking && (
-            <div className="card-smoke-icon">
-              <SmokingRoomsIcon color="inherit" fontSize="inherit" />
-            </div>
-          )}
           {isPets && (
             <div className="card-pets-icon">
               <PetsIcon color="inherit" fontSize="inherit" />
+            </div>
+          )}
+          {!isMusic && (
+            <div className="card-no-music-icon">
+              <MusicOffIcon color="inherit" fontSize="inherit" />
             </div>
           )}
           {isMusic && (
@@ -110,16 +124,38 @@ export const PublishCard = ({ post }) => {
           <p className="card-price">{`${tripPrice}с`}</p>
         </div>
       </div>
-      <div className="publish-cta-col">
-        <div className="publish-chat-col">
-          <TelegramIcon color="inherit" fontSize="inherit" />
-          <p>Связаться</p>
+      {isSearchPage && (
+        <div className="publish-cta-col">
+          <div className="publish-btn-col-1">
+            <ChatIcon color="inherit" fontSize="inherit" />
+            <p>Связаться</p>
+          </div>
+          <div className="publish-btn-col-2">
+            <CallIcon color="inherit" fontSize="inherit" />
+            <p>Позвонить</p>
+          </div>
         </div>
-        <div className="publish-call-col">
-          <CallIcon color="inherit" fontSize="inherit" />
-          <p>Позвонить</p>
+      )}
+      {isUserProfilePage && (
+        <div className="publish-cta-col">
+          <div
+            className="publish-btn-col-1"
+            onClick={() => {
+              onSelectedPostHandler(id);
+            }}
+          >
+            <EditNoteIcon color="inherit" fontSize="inherit" />
+            <p>Изменить</p>
+          </div>
+          <div className="publish-btn-col-2" onClick={() => onDeletePosts(id)}>
+            <DeleteIcon color="inherit" fontSize="inherit" />
+            <p>Удалить</p>
+          </div>
         </div>
-      </div>
+      )}
+      <div className="icon-is-pets-info">{`${
+        isPets ? "Можно" : "Нельзя"
+      } взять питомца`}</div>
     </div>
   );
 };

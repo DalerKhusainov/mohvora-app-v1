@@ -7,8 +7,6 @@ export function formatDate(date) {
   return newformatedDate;
 }
 
-///// THIS FUNCTION CONVERT A DIGIT FORMAT MONTH TO LETTERS
-///// IT'S BEING USED IN Todo.jsx COMPONENT (1 place)
 export function convertMonths(date) {
   const formatedDate = formatDate(date);
   const day = formatedDate.slice(0, 2);

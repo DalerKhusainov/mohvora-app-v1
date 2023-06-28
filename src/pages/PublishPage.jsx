@@ -4,6 +4,9 @@ import React, { useContext } from "react";
 // REACT ROUTER
 import { useNavigate } from "react-router-dom";
 
+// REACT COMPONENTS
+import { PublishForm } from "../components/PublishForm";
+
 // CSS STYLES
 import "../styles/publish-page.scss";
 
@@ -62,91 +65,10 @@ export const PublishPage = () => {
 
   return (
     <div className="publish-page">
-      <form onSubmit={onSubmitPublish}>
-        <p className="publish-page-text"> Опубликовать поездку</p>
-        <div>
-          <label>Откуда</label>
-          <select className="selector-city-from">
-            <option value={""}>Выберите город</option>
-            <option value={"Душанбе"}>Душанбе</option>
-            <option value={"Худжанд"}>Худжанд</option>
-            <option value={"Истаравшан"}>Истаравшан</option>
-            <option value={"Самарканд"}>Самарканд</option>
-          </select>
-        </div>
-        <div>
-          <label>Куда</label>
-          <select className="selector-city-to">
-            <option value={""}>Выберите город</option>
-            <option value={"Душанбе"}>Душанбе</option>
-            <option value={"Худжанд"}>Худжанд</option>
-            <option value={"Истаравшан"}>Истаравшан</option>
-            <option value={"Самарканд"}>Самарканд</option>
-          </select>
-        </div>
-        <div>
-          <label>Когда</label>
-          <input className="date-picker" type="date" />
-        </div>
-        <div>
-          <label>Количество Пассажиров</label>
-          <select className="selector-passenger-amount">
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-            <option value={6}>6</option>
-          </select>
-        </div>
-        <div>
-          <label>Цена за 1-го пассажира</label>
-          <input
-            className="input-price"
-            type="number"
-            placeholder="Цена в сомони"
-          />
-        </div>
-        <div>
-          <label>Ваш номер телефона</label>
-          <input
-            className="input-telefon"
-            type="number"
-            placeholder="+992900000000"
-          />
-        </div>
-        <div>
-          <label>Марка вашего автомобиля</label>
-          <select className="selector-user-car">
-            <option value={"Mercedes-benz"}>Mercedes-benz</option>
-            <option value={"Toyota"}>Toyota</option>
-            <option value={"Opel"}>Opel</option>
-            <option value={"BMW"}>BMW</option>
-          </select>
-        </div>
-        <div>
-          <label>Любите слушать музыку в поездке?</label>
-          <select className="selector-is-music">
-            <option value={true}>Да</option>
-            <option value={false}>Нет</option>
-          </select>
-        </div>
-        <div>
-          <label>Домашние животные в поездке?</label>
-          <select className="selector-is-pets">
-            <option value={true}>Да</option>
-            <option value={false}>Нет</option>
-          </select>
-        </div>
-        <div>
-          <label>Курение в поездке?</label>
-          <select className="selector-is-smoking">
-            <option value={true}>Да</option>
-            <option value={false}>Нет</option>
-          </select>
-        </div>
-        <button> Публиковать</button>
-      </form>
+      <PublishForm
+        onSubmitPublish={onSubmitPublish}
+        isUserProfilePage={false}
+      />
       <div className="bottom-line">&nbsp;</div>
     </div>
   );

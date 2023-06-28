@@ -39,7 +39,7 @@ export const Login = () => {
           {err && <span className="registerErrText">Что-то пошло не так</span>}
         </form>
         <p>
-          У вас нет учетная запись? <Link to="/register">Регистрация</Link>
+          Еще не с нами? <Link to="/register"> Зарегистрироваться</Link>
         </p>
       </div>
       <div className="bottom-line">&nbsp;</div>

@@ -18,8 +18,8 @@ export const MobileApp = () => {
       <div className="mobile-app-info">
         <h2>Путешествовать удобнее с приложением Hamroh</h2>
         <p>
-          Все поездки и билеты в одном месте, самая последняя информация и
-          специальные функции для смартфонов.
+          Все поездки в одном месте, самая последняя информация и специальные
+          функции для смартфонов.
         </p>
         <div className="mobile-app-buttons">
           <div className="mobile-app-button-appstore">
