@@ -64,13 +64,19 @@ export const PublishCard = ({
         <p className="card-date">{convertMonths(date)}</p>
         <div className="card-icons-col">
           {!isSmoking && (
-            <div className="card-no-smoke-icon">
+            <div className="card-smoking-icon">
               <SmokeFreeIcon color="inherit" fontSize="inherit" />
+              <div className="icon-smoking-tip">{`${
+                isSmoking ? "Можно" : "Нельзя"
+              } курить`}</div>
             </div>
           )}
           {isSmoking && (
-            <div className="card-smoke-icon">
+            <div className="card-smoking-icon">
               <SmokingRoomsIcon color="inherit" fontSize="inherit" />
+              <div className="icon-smoking-tip">{`${
+                isSmoking ? "Можно" : "Нельзя"
+              } курить`}</div>
             </div>
           )}
           {!isPets && (
@@ -78,21 +84,33 @@ export const PublishCard = ({
               <PetsIcon color="inherit" fontSize="inherit" />
               <div className="line line-dark">&nbsp;</div>
               <div className="line line-light">&nbsp;</div>
+              <div className="icon-is-pets-tip">{`${
+                isPets ? "Можно" : "Нельзя"
+              } брать питомца`}</div>
             </div>
           )}
           {isPets && (
             <div className="card-pets-icon">
               <PetsIcon color="inherit" fontSize="inherit" />
+              <div className="icon-is-pets-tip">{`${
+                isPets ? "Можно" : "Нельзя"
+              } брать питомца`}</div>
             </div>
           )}
           {!isMusic && (
-            <div className="card-no-music-icon">
+            <div className="card-music-icon">
               <MusicOffIcon color="inherit" fontSize="inherit" />
+              <div className="icon-music-tip">{`${
+                isMusic ? "Люблю" : "Не люблю"
+              } музыку`}</div>
             </div>
           )}
           {isMusic && (
             <div className="card-music-icon">
               <MusicNoteIcon color="inherit" fontSize="inherit" />
+              <div className="icon-music-tip">{`${
+                isMusic ? "Люблю" : "Не люблю"
+              } музыку`}</div>
             </div>
           )}
         </div>
@@ -111,7 +129,10 @@ export const PublishCard = ({
         </div>
         <div className="card-passenger-amount-user-car-col">
           <div className="card-passenger-amaunt-col">
-            <PersonIcon color="inherit" fontSize="inherit" />
+            <div className="card-passenger-icon">
+              <PersonIcon color="inherit" fontSize="inherit" />
+              <div className="icon-passenger-tip">Количество попутчиков</div>
+            </div>
             <p className="passenger-amaunt-text">{amountOfPassengers}</p>
           </div>
           <div className="card-user-car-col">
@@ -153,9 +174,6 @@ export const PublishCard = ({
           </div>
         </div>
       )}
-      <div className="icon-is-pets-info">{`${
-        isPets ? "Можно" : "Нельзя"
-      } взять питомца`}</div>
     </div>
   );
 };

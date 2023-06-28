@@ -73,7 +73,7 @@ export const PublishForm = ({ onSubmitPublish }) => {
           <input
             className="input-telefon"
             type="number"
-            placeholder="+992900000000"
+            placeholder="(+992) 900000000"
           />
         </div>
         <div>

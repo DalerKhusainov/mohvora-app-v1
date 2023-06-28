@@ -106,6 +106,28 @@
         cursor: pointer;
       }
 
+      .card-smoking-icon {
+        position: relative;
+
+        .icon-smoking-tip {
+          position: absolute;
+          top: -3rem;
+          right: -3.5rem;
+          width: max-content;
+          background-color: $color-grey-dark-3;
+          color: $color-white;
+          font-size: $font-size-sm;
+          padding: 0.5rem 0.3rem;
+          border-radius: $border-radius-sm;
+          opacity: 0.5;
+          display: none;
+        }
+
+        &:hover .icon-smoking-tip {
+          display: block;
+        }
+      }
+
       .card-no-pets-icon {
         position: relative;
 
@@ -128,6 +150,68 @@
             top: 0.07rem;
             left: 0.9rem;
           }
+        }
+
+        .icon-is-pets-tip {
+          position: absolute;
+          top: -3rem;
+          right: -5.8rem;
+          width: max-content;
+          background-color: $color-grey-dark-3;
+          color: $color-white;
+          font-size: $font-size-sm;
+          padding: 0.5rem 0.3rem;
+          border-radius: $border-radius-sm;
+          opacity: 0.5;
+          display: none;
+        }
+
+        &:hover .icon-is-pets-tip {
+          display: block;
+        }
+      }
+
+      .card-pets-icon {
+        position: relative;
+
+        .icon-is-pets-tip {
+          position: absolute;
+          top: -3rem;
+          right: -5.8rem;
+          width: max-content;
+          background-color: $color-grey-dark-3;
+          color: $color-white;
+          font-size: $font-size-sm;
+          padding: 0.5rem 0.3rem;
+          border-radius: $border-radius-sm;
+          opacity: 0.5;
+          display: none;
+        }
+
+        &:hover .icon-is-pets-tip {
+          display: block;
+        }
+      }
+
+      .card-music-icon {
+        position: relative;
+
+        .icon-music-tip {
+          position: absolute;
+          top: -3rem;
+          right: -4.5rem;
+          width: max-content;
+          background-color: $color-grey-dark-3;
+          color: $color-white;
+          font-size: $font-size-sm;
+          padding: 0.5rem 0.3rem;
+          border-radius: $border-radius-sm;
+          opacity: 0.5;
+          display: none;
+        }
+
+        &:hover .icon-music-tip {
+          display: block;
         }
       }
     }
@@ -197,6 +281,31 @@
         display: flex;
         align-items: center;
         column-gap: 0.3rem;
+
+        .card-passenger-icon {
+          position: relative;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          .icon-passenger-tip {
+            position: absolute;
+            top: -3rem;
+            right: -6rem;
+            width: max-content;
+            background-color: $color-grey-dark-3;
+            color: $color-white;
+            font-size: $font-size-sm;
+            padding: 0.5rem 0.3rem;
+            border-radius: $border-radius-sm;
+            opacity: 0.5;
+            display: none;
+          }
+
+          &:hover .icon-passenger-tip {
+            display: block;
+          }
+        }
 
         .passenger-amaunt-text {
           color: $color-primary-dark;
@@ -314,22 +423,4 @@
       }
     }
   }
-
-  .icon-is-pets-info {
-    position: absolute;
-    top: -7%;
-    right: -2.5%;
-    background-color: $color-grey-dark-3;
-    color: $color-white;
-    font-size: $font-size-sm;
-    padding: 0.5rem 0.3rem;
-    border-radius: $border-radius-sm;
-    opacity: 0.5;
-    // display: none;
-  }
 }
-
-// .card-pets-icon:hover,
-// .icon-is-pets-info:hover {
-//   display: block;
-// }
