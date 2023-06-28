@@ -87,11 +87,11 @@ export const Navbar = () => {
 
   const onUserProfileClick = () => {
     navigate("user-profile");
+    filterCurUserPostsFunc();
     setOpen(false);
   };
 
   const onSubMenuClick = () => {
-    filterCurUserPostsFunc();
     open ? setOpen(false) : setOpen(true);
   };
 
