@@ -1,0 +1,14 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.chat-navbar {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+
+  .chat-logo {
+    color: $color-white;
+    font-size: $default-font-size;
+    font-weight: 700;
+  }
+}

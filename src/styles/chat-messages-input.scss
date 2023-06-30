@@ -1,0 +1,43 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.chat-messages-input {
+  background-color: $color-primary-light-1;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+
+  .chat-input-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .chat-input {
+      input {
+        border: none;
+        outline: none;
+        background-color: inherit;
+        color: $color-primary-light-2;
+        font-size: $default-font-size;
+
+        &::placeholder {
+          color: $color-primary-dark;
+          font-size: $default-font-size;
+          font-family: "Nunito", sans-serif;
+        }
+      }
+    }
+
+    .chat-button {
+      display: flex;
+      align-items: center;
+
+      button {
+        font-size: 2.5rem;
+        color: $color-primary-light-2;
+        text-align: center;
+      }
+    }
+  }
+}

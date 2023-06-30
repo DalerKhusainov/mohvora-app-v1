@@ -1,0 +1,44 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.message {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  .message-content {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p {
+      background-color: white;
+      color: $color-primary-dark;
+      font-size: $font-size-sm;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 0px 10px 10px 10px;
+      max-width: max-content;
+
+      @include mobile {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+
+  &.owner {
+    flex-direction: row-reverse;
+
+    .message-content {
+      align-items: flex-end;
+      p {
+        background-color: $color-primary-light-1;
+        font-size: $font-size-sm;
+        color: white;
+        font-weight: 700;
+        border-radius: 10px 0px 10px 10px;
+      }
+    }
+  }
+}

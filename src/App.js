@@ -11,7 +11,8 @@ import { SelectedDriver } from "./pages/SelectedDriver";
 import { PublishPage } from "./pages/PublishPage";
 import { SuccessPublishPage } from "./pages/SuccessPublishPage";
 import { UserProfile } from "./pages/UserProfile";
-// import { UserProfilePosts } from "./pages/UserProfilePosts";
+import { Chat } from "./pages/Chat";
+import { ErrorPage } from "./pages/ErrorPage";
 
 // REACT RAUTER
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -40,6 +41,8 @@ function App() {
               element={<SuccessPublishPage />}
             />
             <Route path="user-profile/*" element={<UserProfile />} />
+            <Route path="chat" element={<Chat />} />
+            <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

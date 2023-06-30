@@ -24,6 +24,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import ChatIcon from "@mui/icons-material/Chat";
 
 export const Navbar = () => {
   // OPEN AND CLOSE THE SUB MENU
@@ -82,6 +83,12 @@ export const Navbar = () => {
   const onPublishClick = () => {
     if (currentUser) navigate("publish-page");
     if (!currentUser) console.log("You should register");
+    setOpen(false);
+  };
+
+  const onChatClick = () => {
+    navigate("/chat");
+    filterCurUserPostsFunc();
     setOpen(false);
   };
 
@@ -159,6 +166,14 @@ export const Navbar = () => {
                   <span className="cub-menu-link-text" onClick={onLogoutClick}>
                     Выход
                   </span>
+                </li>
+              )}
+              {currentUser && (
+                <li className="sub-menu-link" onClick={onChatClick}>
+                  <div className="sub-menu-icon">
+                    <ChatIcon color="inherit" fontSize="inherit" />
+                  </div>
+                  <span className="cub-menu-link-text">Мой чат</span>
                 </li>
               )}
               {currentUser && (

@@ -1,0 +1,19 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.chat-section {
+  width: 75%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 35% 65%;
+  margin: 0 auto;
+  padding-bottom: 20rem;
+
+  @include mobile {
+    width: 90%;
+  }
+
+  @include mobile-small {
+    width: 95%;
+  }
+}

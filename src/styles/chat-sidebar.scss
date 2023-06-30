@@ -1,0 +1,9 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.chat-sidebar {
+  background-color: $color-primary-light-1;
+  display: grid;
+  grid-template-rows: 5rem 60rem;
+  border-right: solid 2px $color-primary-dark;
+}
