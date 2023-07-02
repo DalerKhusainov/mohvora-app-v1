@@ -10,9 +10,15 @@ import "../styles/search-form.scss";
 // FORM REACT CONTEXT API
 import { PostsContext } from "../context/PostsContext";
 
-export const SearchForm = () => {
+// REACT ROUTER DOM
+import { useNavigate } from "react-router-dom";
+
+export const SearchForm = ({ isSearchPage, isHomePage }) => {
   // FROM CONTEXT API
   const { filterPostsFunc } = useContext(PostsContext);
+
+  // REACT ROUTER HOOK
+  const navigate = useNavigate();
 
   // STATES FROM INPUTS
   const [dirFrom, setDirFrom] = useState("");
@@ -77,14 +83,29 @@ export const SearchForm = () => {
             setDateEnd={setDateEnd}
           />
         </div>
-        <button
-          className="search-form-btn"
-          onClick={() => {
-            filterPostsFunc(dirFrom, dirTo, dateStart, dateEnd);
-          }}
-        >
-          Поиск
-        </button>
+        {isSearchPage && (
+          <button
+            className="search-form-btn"
+            onClick={() => {
+              filterPostsFunc(dirFrom, dirTo, dateStart, dateEnd);
+            }}
+          >
+            Поиск
+          </button>
+        )}
+        {isHomePage && (
+          <button
+            className="search-form-btn"
+            onClick={() => {
+              filterPostsFunc(dirFrom, dirTo, dateStart, dateEnd);
+              setTimeout(() => {
+                navigate("/search-page");
+              }, 1000);
+            }}
+          >
+            Поиск
+          </button>
+        )}
       </div>
     </div>
   );

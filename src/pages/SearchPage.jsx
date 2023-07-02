@@ -27,7 +27,7 @@ export const SearchPage = () => {
 
   return (
     <section className="search-page-section">
-      <SearchForm />
+      <SearchForm isSearchPage={true} isHomePage={false} />
 
       {isTrue && (
         <div className="search-page-result-col">

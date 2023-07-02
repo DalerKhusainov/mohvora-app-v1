@@ -70,14 +70,15 @@
       font-size: $default-font-size;
       font-family: "Nunito", sans-serif;
       cursor: pointer;
-      transition: all 0.1s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
       @include tablet-small {
         padding: 1rem 4rem;
       }
 
       &:hover {
-        background-color: $color-hover-btn-dark;
+        transform: translateY(-2px);
+        box-shadow: $box-shadow-btn;
       }
     }
   }

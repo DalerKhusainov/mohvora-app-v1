@@ -1,6 +1,10 @@
+// REACT
 import { createContext, useContext, useReducer } from "react";
+
+// REACT CONTEXT API
 import { AuthContext } from "./AuthContext";
 
+// CREATING CONTEXT API
 export const ChatContext = createContext();
 
 export const ChatContextProvider = ({ children }) => {

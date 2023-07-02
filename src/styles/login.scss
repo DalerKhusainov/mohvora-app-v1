@@ -48,15 +48,23 @@
         background-color: $color-primary-dark;
         color: white;
         padding: 1.5rem 1rem;
+        margin-top: $top-gutter-sm;
         font-size: $default-font-size;
         font-weight: 700;
         font-family: inherit;
         border: none;
         border-radius: $border-radius-sm;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-          background-color: $color-hover-btn-dark;
+          transform: translateY(-1px);
+          box-shadow: $box-shadow-btn;
+        }
+
+        &:active {
+          transform: translateY(0px);
+          box-shadow: $box-shadow-btn-active;
         }
       }
 
@@ -70,6 +78,13 @@
       color: $color-primary-light-2;
       font-size: 1.2rem;
       margin-top: 1rem;
+
+      a:link {
+        text-decoration: none;
+        font-size: $font-size-sm;
+        font-weight: 700;
+        margin-left: 0.3rem;
+      }
     }
   }
 

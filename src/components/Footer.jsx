@@ -71,7 +71,7 @@ export const Footer = () => {
         <p className="footer-heading">О нас</p>
         <ul className="footer-nav">
           <li className="footer-link" onClick={() => navigate("how-work")}>
-            Как работает Hamroh
+            Как работает Taksim
           </li>
           <li className="footer-link">О нас</li>
           <li className="footer-link">Центр помощи</li>

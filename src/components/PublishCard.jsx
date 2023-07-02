@@ -51,6 +51,7 @@ export const PublishCard = ({
 }) => {
   // REACT STATES
   const [openModalAlert, setOpenModalAlert] = useState(false);
+  const [errorText, setErrorText] = useState("");
 
   // REACT CONTEXT API
   const { onDeletePosts } = useContext(PostsContext);
@@ -114,6 +115,7 @@ export const PublishCard = ({
 
   // GET THE TARGET ELEMENT TO TOGGLE
   const refOne = useRef(null);
+  // console.log(refOne);
 
   useEffect(() => {
     document.addEventListener("keydown", hideModalAlertOnEscape, true);
@@ -233,12 +235,21 @@ export const PublishCard = ({
             <div
               className="publish-btn-col-1"
               onClick={() => {
-                if (currentUser.uid !== userId) {
+                if (!currentUser) {
+                  setErrorText(
+                    "Извините за неудобство, но для начала чата вам необходимо авторизоваться в своем аккаунте. Пожалуйста, войдите в свой аккаунт, чтобы продолжить."
+                  );
+                  setOpenModalAlert(true);
+                  return;
+                } else if (currentUser.uid !== userId) {
                   handleSelect(userId, userName, photoURL);
                   setTimeout(() => {
                     navigate("/chat");
                   }, 1000);
-                } else {
+                } else if (currentUser.uid === userId) {
+                  setErrorText(
+                    "Извините, но не представляется возможным начать чат самому с собой!"
+                  );
                   setOpenModalAlert(true);
                 }
               }}
@@ -278,6 +289,7 @@ export const PublishCard = ({
           isError={true}
           refOne={refOne}
           setOpenModalAlert={setOpenModalAlert}
+          errorText={errorText}
         />
       )}
     </>

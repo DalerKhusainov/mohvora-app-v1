@@ -2,7 +2,7 @@
 import React from "react";
 
 // REACT ROUTER
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // ASSETS
 import map from "../assets/svg/map.svg";
@@ -16,7 +16,8 @@ import verifyOrder from "../assets/svg/join.svg";
 import "../styles/how-driver.scss";
 
 export const HowDriver = () => {
-  //   const navigate = useNavigate();
+  // REACT ROUTER HOOK
+  const navigate = useNavigate();
 
   return (
     <section className="how-driver-section">
@@ -25,7 +26,7 @@ export const HowDriver = () => {
         <div className="how-driver-col-left">
           <div className="how-driver-col">
             <img src={map} alt="Man points on a map" />
-            <p>Выберите направление </p>
+            <p>Выберите направление</p>
           </div>
           <div className="how-driver-col">
             <img src={calendar} alt="Calendat and a girl" />
@@ -33,28 +34,27 @@ export const HowDriver = () => {
           </div>
           <div className="how-driver-col">
             <img src={addFriend} alt="Telephone and a man" />
-            <p>Добавьте количество пассижиров </p>
+            <p>Добавьте количество попутчиков</p>
           </div>
         </div>
         <div className="how-driver-col-right">
           <div className="how-driver-col">
             <img src={payment} alt="A man holds a credit card" />
-            <p>Добавьте стоимость поездки </p>
+            <p>Добавьте стоимость поездки</p>
           </div>
           <div className="how-driver-col">
             <img src={checkoutUser} alt="A girl and a diagram" />
-            <p>Пассажиры находят вас</p>
+            <p>Попутчики находят вас</p>
           </div>
           <div className="how-driver-col">
             <img src={verifyOrder} alt="A man confirms an order" />
-            <p>Вы подтверждаете заявку </p>
+            <p>Вы подтверждаете заявку</p>
           </div>
         </div>
       </div>
-      {/* <button className="how-btn" onClick={() => navigate("how-work")}>
-        {" "}
-        Узнать как это работает
-      </button> */}
+      <button className="how-btn" onClick={() => navigate("/how-work")}>
+        Назад
+      </button>
       <div className="bottom-line">&nbsp;</div>
     </section>
   );

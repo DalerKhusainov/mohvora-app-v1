@@ -1,6 +1,9 @@
 // REACT
 import React, { useState, useContext, useRef, useEffect } from "react";
 
+// REACT COMPONENTS
+import { ModalAlertMeesage } from "./ModalAlertMeesage";
+
 // REACT ROUTER
 import { useNavigate } from "react-router-dom";
 
@@ -29,6 +32,7 @@ import ChatIcon from "@mui/icons-material/Chat";
 export const Navbar = () => {
   // OPEN AND CLOSE THE SUB MENU
   const [open, setOpen] = useState(false);
+  const [openModalAlert, setOpenModalAlert] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
   const { filterCurUserPostsFunc } = useContext(PostsContext);
@@ -44,12 +48,18 @@ export const Navbar = () => {
 
   // HIDE SUBMENU ON ESC PRESS
   const hideOnEscape = (e) => {
-    if (e.key === "Escape") setOpen(false);
+    if (e.key === "Escape") {
+      setOpen(false);
+      setOpenModalAlert(false);
+    }
   };
 
   // HIDE ON OUTSIDE CLICK
   const hideOnClickOutside = (e) => {
-    if (refOne.current && !refOne.current.contains(e.target)) setOpen(false);
+    if (refOne.current && !refOne.current.contains(e.target)) {
+      setOpen(false);
+      setOpenModalAlert(false);
+    }
   };
 
   const onRegisterClick = () => {
@@ -66,7 +76,7 @@ export const Navbar = () => {
 
   const onLogoutClick = () => {
     signOut(auth);
-    navigate("login");
+    navigate("/");
     setOpen(false);
   };
 
@@ -82,7 +92,7 @@ export const Navbar = () => {
 
   const onPublishClick = () => {
     if (currentUser) navigate("publish-page");
-    if (!currentUser) console.log("You should register");
+    if (!currentUser) setOpenModalAlert(true);
     setOpen(false);
   };
 
@@ -106,7 +116,7 @@ export const Navbar = () => {
     <>
       <header className="header" ref={refOne}>
         <div className="logo" onClick={onLogoClick}>
-          hamroh
+          taksim
         </div>
         <nav className="main-nav">
           <ul className="main-nav-list">
@@ -140,10 +150,10 @@ export const Navbar = () => {
             </li>
           </ul>
         </nav>
-        {open && (
+        {open && !currentUser && (
           <div
             className="main-nav-sub-menu"
-            style={{ bottom: `${currentUser ? "-17.1" : "-10"}rem` }}
+            style={{ bottom: `${!currentUser && "-10"}rem` }}
           >
             <ul className="sub-menu-links">
               <li className="sub-menu-link" onClick={onLoginClick}>
@@ -158,34 +168,46 @@ export const Navbar = () => {
                 </div>
                 <span className="cub-menu-link-text">Регистрация</span>
               </li>
-              {currentUser && (
-                <li className="sub-menu-link">
-                  <div className="sub-menu-icon">
-                    <LogoutIcon color="inherit" fontSize="inherit" />
-                  </div>
-                  <span className="cub-menu-link-text" onClick={onLogoutClick}>
-                    Выход
-                  </span>
-                </li>
-              )}
-              {currentUser && (
-                <li className="sub-menu-link" onClick={onChatClick}>
-                  <div className="sub-menu-icon">
-                    <ChatIcon color="inherit" fontSize="inherit" />
-                  </div>
-                  <span className="cub-menu-link-text">Мой чат</span>
-                </li>
-              )}
-              {currentUser && (
-                <li className="sub-menu-link" onClick={onUserProfileClick}>
-                  <div className="sub-menu-icon">
-                    <AccountBoxIcon color="inherit" fontSize="inherit" />
-                  </div>
-                  <span className="cub-menu-link-text">Профиль</span>
-                </li>
-              )}
             </ul>
           </div>
+        )}
+        {open && currentUser && (
+          <div
+            className="main-nav-sub-menu"
+            style={{ bottom: `${currentUser && "-13.1"}rem` }}
+          >
+            <ul className="sub-menu-links">
+              <li className="sub-menu-link">
+                <div className="sub-menu-icon">
+                  <LogoutIcon color="inherit" fontSize="inherit" />
+                </div>
+                <span className="cub-menu-link-text" onClick={onLogoutClick}>
+                  Выход
+                </span>
+              </li>
+              <li className="sub-menu-link" onClick={onChatClick}>
+                <div className="sub-menu-icon">
+                  <ChatIcon color="inherit" fontSize="inherit" />
+                </div>
+                <span className="cub-menu-link-text">Мой чат</span>
+              </li>
+              <li className="sub-menu-link" onClick={onUserProfileClick}>
+                <div className="sub-menu-icon">
+                  <AccountBoxIcon color="inherit" fontSize="inherit" />
+                </div>
+                <span className="cub-menu-link-text">Профиль</span>
+              </li>
+            </ul>
+          </div>
+        )}
+        {openModalAlert && (
+          <ModalAlertMeesage
+            isError={true}
+            errorText={
+              "Извините за неудобство, но для того чтобы опубликовать поездку, пожалуйста, войдите в свой аккаунт. Благодарим за понимание!"
+            }
+            setOpenModalAlert={setOpenModalAlert}
+          />
         )}
       </header>
     </>

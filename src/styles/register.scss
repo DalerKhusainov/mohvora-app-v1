@@ -71,7 +71,8 @@
         cursor: pointer;
 
         &:hover {
-          background-color: $color-hover-btn-dark;
+          transform: translateY(-1px);
+          box-shadow: $box-shadow-btn;
         }
       }
 
@@ -85,6 +86,13 @@
       color: $color-primary-light-2;
       font-size: 1.2rem;
       margin-top: 1rem;
+
+      a:link {
+        text-decoration: none;
+        font-size: $font-size-sm;
+        font-weight: 700;
+        margin-left: 0.3rem;
+      }
     }
   }
 

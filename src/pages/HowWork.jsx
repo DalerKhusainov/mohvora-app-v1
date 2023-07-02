@@ -28,7 +28,7 @@ export const HowWork = () => {
             onClick={() => navigate("how-passenger")}
           >
             {" "}
-            Пассажир
+            Попутчик
           </button>
         </div>
         <div className="driver-col">

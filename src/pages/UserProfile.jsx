@@ -25,8 +25,8 @@ export const UserProfile = () => {
         <nav className="user-profile-nav">
           <ul className="panel-btn">
             <CustomLink to={"user-profile-info"}>Обо мне</CustomLink>
-            <CustomLink to={"user-profile-posts"}>Вашы поездки</CustomLink>
-            <CustomLink to={"user-profile-favorites"}>Избранные</CustomLink>
+            <CustomLink to={"user-profile-posts"}>Мои поездки</CustomLink>
+            <CustomLink to={"user-profile-favorites"}>Мои избранные</CustomLink>
           </ul>
         </nav>
         <div className="user-profile-posts">
@@ -44,6 +44,7 @@ export const UserProfile = () => {
   );
 };
 
+// CUSTOM LINK OF ADDING ACTIVE CLASS NAME FOR SELECTING THE LINK
 const CustomLink = ({ to, children, ...props }) => {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });

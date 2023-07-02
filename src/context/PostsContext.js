@@ -10,6 +10,7 @@ import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 // REACT CONTEXT API FILE
 import { AuthContext } from "./AuthContext";
 
+// CREATING CONTEXT API
 export const PostsContext = createContext();
 
 export const PostsContextProvider = ({ children }) => {
@@ -27,6 +28,7 @@ export const PostsContextProvider = ({ children }) => {
   // SPECIFYING REFERENCE TO COLLECTION
   const postsCollectionRef = collection(db, "posts");
 
+  // GETTING ALL POSTS FROM FIREBASE
   const getPostsList = async () => {
     try {
       // READ THE DATA
@@ -47,6 +49,7 @@ export const PostsContextProvider = ({ children }) => {
     getPostsList();
   }, []);
 
+  // ON SEARCH POSTS HANDLER
   const filterPostsFunc = (dirFrom, dirTo, dateStart, dateEnd) => {
     const copyPosts = [...posts];
     const newFilteredPosts = copyPosts.filter(
@@ -62,6 +65,7 @@ export const PostsContextProvider = ({ children }) => {
     setDirectionTo(dirTo);
   };
 
+  // ON FILTER POSTS HANDLER BY PRICES AND DATES
   const sortedPostsFunc = (value) => {
     if (value === "") return;
     if (value === "Сначала дешевые") {
@@ -98,6 +102,7 @@ export const PostsContextProvider = ({ children }) => {
     sortedPostsFunc();
   }, []);
 
+  // ON DELETE POSTS HANDLER. IT IS BEING USED IN THE USER PROFILE PAGE
   const onDeletePosts = async (postId) => {
     const post = doc(db, "posts", postId);
     await deleteDoc(post);
@@ -106,6 +111,7 @@ export const PostsContextProvider = ({ children }) => {
     setCurUserPosts(newCurUserPosts);
   };
 
+  // ON CURRENT USER'S POSTS HANDLER. IT IS BEING USED IN THE USER PROFILE PAGE
   const filterCurUserPostsFunc = () => {
     const newCurUserPosts = posts.filter(
       (post) => post.userId === currentUser.uid
@@ -113,6 +119,7 @@ export const PostsContextProvider = ({ children }) => {
     setCurUserPosts(newCurUserPosts);
   };
 
+  // ON CURRENT USER'S POST UPDATE HANDLER. IT IS BEING USED IN USER PROFILE PAGE
   const onUpdatePost = async (
     postId,
     dirFrom,
@@ -141,6 +148,7 @@ export const PostsContextProvider = ({ children }) => {
     });
     getPostsList();
 
+    // THIS BLOCK OF CODE FOR UPDATING THE POSTS STATE
     const copyCurUserPostsForEdit = [...curUserPosts];
     const selectedPostForEdit = copyCurUserPostsForEdit.find(
       (post) => post.id === postId

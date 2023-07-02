@@ -50,6 +50,9 @@ $gutter-horizontal-small: 4rem;
 $bottom-gutter-sm: 1rem;
 $bottom-gutter-md: 3rem;
 $bottom-gutter-lg: 5rem;
+$top-gutter-sm: 1rem;
+$top-gutter-md: 3rem;
+$top-gutter-lg: 5rem;
 
 // BORDER RADIUS
 $border-radius-sm: 3px;
@@ -57,8 +60,8 @@ $border-radius-md: 5px;
 $border-radius-lg: 10px;
 
 // BOX SHADOWS
-$box-shadow-btn: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-  rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+$box-shadow-btn: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+$box-shadow-btn-active: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 $box-shadow-card-light: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 $box-shadow-card-dark: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 $box-shadow-sub-menu: rgb(38, 57, 77) 0px 20px 30px -10px;

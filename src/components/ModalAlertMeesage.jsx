@@ -7,7 +7,12 @@ import "../styles/modal-alert-message.scss";
 // MATERIAL UI
 import ErrorIcon from "@mui/icons-material/Error";
 
-export const ModalAlertMeesage = ({ isError, refOne, setOpenModalAlert }) => {
+export const ModalAlertMeesage = ({
+  isError,
+  refOne,
+  setOpenModalAlert,
+  errorText,
+}) => {
   return (
     <div className="modal-alert-message">
       {isError && (
@@ -15,9 +20,7 @@ export const ModalAlertMeesage = ({ isError, refOne, setOpenModalAlert }) => {
           <div className="modal-alert-message-icon">
             <ErrorIcon color="inherit" fontSize="inherit" />
           </div>
-          <span className="modal-alert-message-text">
-            Вы не можете начать чат самим собой!
-          </span>
+          <span className="modal-alert-message-text">{errorText}</span>
           <button
             className="modal-alert-message-btn"
             onClick={() => setOpenModalAlert(false)}

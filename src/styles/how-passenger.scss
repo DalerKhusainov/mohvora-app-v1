@@ -89,6 +89,29 @@
     }
   }
 
+  .how-btn {
+    background-color: $color-primary-dark;
+    border: none;
+    border-radius: 10rem;
+    outline: none;
+    padding: 1.5rem 6rem;
+    color: $color-white;
+    font-size: $default-font-size;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    @include tablet-small {
+      padding: 1rem 4rem;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $box-shadow-btn;
+    }
+  }
+
   .bottom-line {
     background-color: $color-primary-light-1;
     height: 5vh;

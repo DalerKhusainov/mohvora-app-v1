@@ -16,7 +16,7 @@ export const MobileApp = () => {
         <img src={mobileApp} alt="Mobile App" />
       </div>
       <div className="mobile-app-info">
-        <h2>Путешествовать удобнее с приложением Hamroh</h2>
+        <h2>Путешествовать удобнее с приложением Taksim</h2>
         <p>
           Все поездки в одном месте, самая последняя информация и специальные
           функции для смартфонов.

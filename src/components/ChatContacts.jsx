@@ -18,6 +18,7 @@ export const ChatContacts = () => {
   const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
+  // FETCHING CURRENT USER'S CHAT DATA FROM FIREBASE
   useEffect(() => {
     const getChats = () => {
       const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
@@ -32,6 +33,7 @@ export const ChatContacts = () => {
     currentUser.uid && getChats();
   }, [currentUser.uid]);
 
+  // ON SELECT CONTACT FOR CHAT
   const handleSelect = (u) => {
     dispatch({ type: "CHANGE_USER", payload: u });
   };

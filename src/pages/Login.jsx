@@ -39,7 +39,14 @@ export const Login = () => {
           {err && <span className="registerErrText">Что-то пошло не так</span>}
         </form>
         <p>
-          Еще не с нами? <Link to="/register"> Зарегистрироваться</Link>
+          Еще не с нами?{" "}
+          <Link
+            to="/register"
+            style={{ color: "#054550", textDecoration: "inherit" }}
+          >
+            {" "}
+            Зарегистрироваться
+          </Link>
         </p>
       </div>
       <div className="bottom-line">&nbsp;</div>
