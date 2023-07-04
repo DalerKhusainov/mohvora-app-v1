@@ -33,6 +33,7 @@ export const ChatMessagesInput = () => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  // CREATING NEW MESSAGES
   const handleMessage = async () => {
     await updateDoc(doc(db, "chats", data.chatId), {
       messages: arrayUnion({
@@ -59,6 +60,7 @@ export const ChatMessagesInput = () => {
     setText("");
   };
 
+  // HANDLE ENTER KEYBOARD EVENT
   const handleKey = (e) => {
     e.code === "Enter" && handleMessage();
   };

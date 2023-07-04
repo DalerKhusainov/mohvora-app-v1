@@ -27,11 +27,11 @@
   .hero {
     display: flex;
     justify-content: space-between;
-    column-gap: $gutter-vertical;
+    column-gap: $gutter-vertical-small;
     margin-bottom: $gutter-horizontal;
 
     @include laptop {
-      column-gap: $gutter-vertical-small;
+      column-gap: 2rem;
     }
 
     @include laptop-small {

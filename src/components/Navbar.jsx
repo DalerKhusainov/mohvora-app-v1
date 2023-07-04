@@ -18,6 +18,9 @@ import { auth } from "../configs/firebase";
 // CSS STYLES
 import "../styles/navbar.scss";
 
+// FROM ASSETS
+import logo from "../assets/png/logo.png";
+
 // MATERIAL UI ICONS
 import SearchIcon from "@mui/icons-material/Search";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
@@ -116,7 +119,8 @@ export const Navbar = () => {
     <>
       <header className="header" ref={refOne}>
         <div className="logo" onClick={onLogoClick}>
-          taksim
+          <img src={logo} alt="Logo" />
+          <p className="logo-title">taksim</p>
         </div>
         <nav className="main-nav">
           <ul className="main-nav-list">

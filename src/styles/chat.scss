@@ -2,18 +2,28 @@
 @import "./mixins.scss";
 
 .chat-section {
-  width: 75%;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 35% 65%;
-  margin: 0 auto;
-  padding-bottom: 20rem;
+  height: 85vh;
 
-  @include mobile {
-    width: 90%;
+  .chat {
+    width: 75%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 35% 65%;
+    margin: 0 auto;
+
+    @include mobile {
+      width: 90%;
+    }
+
+    @include mobile-small {
+      width: 95%;
+    }
   }
 
-  @include mobile-small {
-    width: 95%;
+  .bottom-line {
+    background-color: $color-primary-light-1;
+    height: 5vh;
+    width: 100%;
+    margin-top: 15rem;
   }
 }

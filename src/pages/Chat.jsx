@@ -10,9 +10,14 @@ import "../styles/chat.scss";
 
 export const Chat = () => {
   return (
-    <section className="chat-section">
-      <ChatSidebar />
-      <ChatMessagesSide />
-    </section>
+    <>
+      <section className="chat-section">
+        <div className="chat">
+          <ChatSidebar />
+          <ChatMessagesSide />
+        </div>
+      </section>
+      <div className="bottom-line">&nbsp;</div>
+    </>
   );
 };

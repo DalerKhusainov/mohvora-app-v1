@@ -7,7 +7,7 @@ import "../styles/chat-navbar.scss";
 export const ChatNavbar = () => {
   return (
     <nav className="chat-navbar">
-      <span className="chat-logo">Hamroh Chat</span>
+      <span className="chat-logo">Taksim Chat</span>
     </nav>
   );
 };
